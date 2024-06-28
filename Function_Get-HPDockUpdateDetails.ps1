@@ -113,7 +113,7 @@ function Get-HPDockUpdateDetails {
     #>
     [CmdletBinding()]
     param(
-        [Parameter(Mandatory = $false, HelpMessage="Only matters when used with -Update, determine if user will see dialog or not")][ValidateSet('Silent')][String]$UIExperience,
+        [Parameter(Mandatory = $false, HelpMessage="Only matters when used with -Update, determine if user will see dialog or not")][ValidateSet('NonInteractive' , 'Silent')][String]$UIExperience,
         [Parameter(Mandatory = $false, HelpMessage="Number between 60 and 600 for seconds to wait for a dock to be connected before exiting automatically")][ValidateRange(60,600)][int]$WaitTimer,
         [switch]$CMPackage, #This requires that you have a download step in the TS that downloads the Dock Firmware Softpaqs and places in variable HPDOCK (%HPDOCK01%)
         [switch]$BypassHPCMSL,
